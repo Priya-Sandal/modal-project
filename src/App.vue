@@ -1,42 +1,66 @@
- <template>
-  
-     <input type="text" ref="input">
-  <button @click="focusbtn">Focus</button>
-
- 
+<template>
+  <div class="main">
+    <h2>VueJs Exercise 2</h2>
+    <input type="text" ref="input">
+    <button @click="focusBtn">Focus</button>
+    <br />
+    <ModalBox title="Sign up for the giveaway!" content="Grab your ninja swag for half price!" theme="sale" ref="modal">
+      <template v-slot:links>
+        <a href="#" id="slot-link">Close</a>
+      </template>
+    </ModalBox>
+  </div>
 </template>
 
-<script >
-  //using template reference
-  export default{
-   methods:{
-    focusbtn() {
-    this.$refs.input.focus();//template reference
+<script>
+import ModalBox from './components/ModalBox.vue'
+export default {
+  components: {
+    ModalBox
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    focusBtn() {
+      this.$refs.input.focus();
+      console.log("focus");
+    },
   }
-   } 
-  }
- 
-
-  // import HelloWorldVue from './components/HelloWorld.vue';
-
+}
 </script>
 
-
-}
-
-
 <style>
-
-
-button {
-    margin: 8px 2;
-    padding: 5px 10px;
-    background-color: #1e90ff;
-    color: #fff;
-    font-size: 1rem;
-    border: 1px solid dodgerblue;
+* {
+  margin: 0px;
+  padding: 0;
 }
-input{
-  font-size: large;
+.main {
+  position: relative;
+  height: 100%;
+  padding: 20px;
+}
+button {
+  margin: 5px 0px;
+  padding: 5px 10px;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid dodgerblue;
+}
+input {
+  font-size: 1rem;
+  padding: 5px;
+}
+#slot-link {
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 4px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  width: 80px;
+  white-space: nowrap;
 }
 </style>
