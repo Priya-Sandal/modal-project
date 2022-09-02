@@ -6,15 +6,17 @@
     <button @click="focusBtn">Focus</button>
     <br />
     <!-- <h1 v-if="show">Priya modal</h1> -->
-     <button v-if="show">Modal</button> 
+      <!-- <button v-if="show">Modal</button>  -->
       <button @click="show = !show">Modal</button> 
-    <!-- <div class="prompt" v-if="show" @click="show = !show">
-            <div id="modal-box" :class="{ sale: isValid }" @click.prevent="show = !show"> -->
+     <div class="prompt" v-if="show" @click="show = !show">
+            <div id="modal-box" :class="{ sale: isValid }" @click.prevent="show = !show"> 
     <ModalBox title="Sign up for the giveaway!" content="Grab your ninja swag for half price!" theme="sale" ref="modal" :show="show">
       <template v-slot:links >
         <a href="#" id="slot-link">Close</a>
       </template>
     </ModalBox> 
+            </div>
+     </div>
 
   </div>
   <!-- </div>
