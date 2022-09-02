@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="show = !show">Modal</button>
+         <!-- <button @click="show = !show">Modal</button> -->
         <div class="prompt" v-if="show" @click="show = !show">
             <div id="modal-box" :class="{ sale: isValid }" @click.prevent="show = !show">
                 <h1>{{ title }}</h1>
@@ -9,22 +9,28 @@
                     <slot name="links" v-if="show"></slot>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> 
+        <!-- <h1 >{{show}}</h1> -->
+    </div> 
 </template>
   
 <script>
+
+
 export default {
     name: 'ModalBox',
     data() {
         return {
-            show: false,
+         show: true,
+            
         }
     },
     props: {
         title: String,
         content: String,
         theme: String,
+        // show:Boolean
+
     },
     created() {
         if (this.theme == 'sale') {
@@ -39,7 +45,7 @@ export default {
     margin: 0px;
     padding: 0px;
 }
-
+ 
 #center h1 {
     color: rgb(48, 184, 184);
 }
