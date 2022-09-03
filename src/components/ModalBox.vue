@@ -1,7 +1,7 @@
-image.png<template>
+<template>
     <div>
-         <!-- <button @click="show = !show">Modal</button> -->
-        <!-- <div class="prompt" v-if="show" @click="show = !show"> -->
+          <!-- <button @click="show = !show">Modal</button>  -->
+        <div class="prompt" v-if="show" @click="show = !show">
             <div id="modal-box" :class="{ sale: isValid }" @click.prevent="show = !show"> 
                 <h1>{{ title }}</h1>
                 <p>{{ content }}</p>
@@ -10,8 +10,8 @@ image.png<template>
                 </div>
             </div>
         </div> 
-        <!-- <h1 >{{show}}</h1> -->
-    <!-- </div>  -->
+       
+    </div> 
 </template>
   
 <script>
@@ -29,7 +29,7 @@ export default {
         title: String,
         content: String,
         theme: String,
-        // show:Boolean
+    //   show:Boolean
 
     },
     created() {

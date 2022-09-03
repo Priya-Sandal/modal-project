@@ -1,37 +1,37 @@
 
-<template> 
+<template>
   <div class="main">
     <h2>VueJs Ex2</h2>
     <input type="text" ref="input">
     <button @click="focusBtn">Focus</button>
     <br />
-    <!-- <h1 v-if="show">Priya modal</h1> -->
-      <!-- <button v-if="show">Modal</button>  -->
-      <button @click="show = !show">Modal</button> 
-     <div class="prompt" v-if="show" @click="show = !show">
-            <div id="modal-box" :class="{ sale: isValid }" @click.prevent="show = !show"> 
-    <ModalBox title="Sign up for the giveaway!" content="Grab your ninja swag for half price!" theme="sale" ref="modal" :show="show">
-      <template v-slot:links >
+     <!-- <ModalBox v-if="show"></ModalBox> -->
+    <button @click="show = !show">Modal</button>
+ 
+    <ModalBox  v-if="show" title="Sign up for the giveaway!" content="Grab your ninja swag for half price!" theme="sale" ref="modal"
+      :show="show">
+      <template v-slot:links>
         <a href="#" id="slot-link">Close</a>
       </template>
-    </ModalBox> 
-            </div>
-     </div>
-
+    </ModalBox>
   </div>
-  <!-- </div>
-  </div> -->
+
+
+
+
 
 
 
 </template>
 
 <script>
-import ModalBox from './components/ModalBox.vue'
+
+import ModalBox from './components/ModalBox.vue';
 export default {
   components: {
-    ModalBox
-  },
+    ModalBox,
+    
+},
   data() {
     return {
       show: false
